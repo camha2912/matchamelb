@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Developer Wiki | MatchaMelb</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg sticky-top shadow-sm"
+      style="background-color: #94a470"
+    >
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <img
+            src="images/matchamelb-logo-white.png"
+            alt="MatchaMelb Logo"
+            height="36"
+            class="me-2"
+          />
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nav Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <!-- Internal & External Nav Items -->
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="/about">About</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="/#reviews">Reviews</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="/recipes">Recipes</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="/#faq">FAQ</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="/#contact">Contact</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link text-white active" href="/wiki">Wiki</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="py-5" style="background-color: #fef8e7">
+      <div class="container">
+        <div class="row align-items-center mb-5">
+          <!-- Text Column -->
+          <div class="col-md-7 text-center text-md-start">
+            <h1 class="fw-bold mb-3" style="color: #b37149">Developer Wiki</h1>
+            <p class="lead mb-0">
+              A guide to the awesome UI features built into MatchaMelb — for
+              developers looking to learn or replicate similar effects
+            </p>
+          </div>
+
+          <!-- Image Column -->
+          <div class="col-md-5 text-center">
+            <img
+              src="/images/wiki-3.png"
+              alt="MatchaMelb Dev Characters"
+              class="img-fluid"
+              style="max-width: 280px"
+            />
+          </div>
+        </div>
+
+        <!-- Homepage Features -->
+        <h3 class="mb-3">Homepage</h3>
+        <div class="accordion mb-4" id="homepageAccordion">
+          <!-- Review Card Slider -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSlider">
+              <button
+                class="accordion-button"
+                type="button"
+                style="background-color: #f0f2c4"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseSlider"
+              >
+                🧋 Review Card Slider + Hover Animation
+              </button>
+            </h2>
+            <div
+              id="collapseSlider"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#homepageAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                  Users can browse matcha reviews 3 at a time using
+                  <strong>Next</strong> and <strong>Previous</strong> arrows.
+                  Each card includes venue details and gently lifts on hover for
+                  a smooth, interactive feel.
+                </p>
+                <p><strong>🛠 How it works:</strong></p>
+                <ul>
+                  <li>
+                    Review cards are structured in <code>index.ejs</code> inside
+                    a container with the ID <code>reviewCards</code>.
+                  </li>
+                  <li>
+                    In <code>scripts.js</code>, the slider logic:
+                    <ul>
+                      <li>Tracks the current index of visible cards.</li>
+                      <li>
+                        Shows 3 cards per view and updates them dynamically when
+                        the <strong>Next</strong> or
+                        <strong>Prev</strong> button is clicked.
+                      </li>
+                      <li>
+                        Disables buttons at the beginning or end of the list to
+                        prevent overflow.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    The hover animation is defined in <code>styles.css</code>:
+                    <ul>
+                      <li>
+                        When a user hovers over a <code>.review-card</code>, it
+                        applies a slight upward shift using
+                        <code>transform: translateY(-5px)</code> for an
+                        engaging, responsive feel.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>
+                  This component combines JavaScript interaction with smooth CSS
+                  transitions to create an intuitive browsing experience.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Search Bar for Reviews -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSearch">
+              <button
+                class="accordion-button"
+                type="button"
+                style="background-color: #f0f2c4"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseSearch"
+              >
+                🔍 Search Bar for Reviews
+              </button>
+            </h2>
+            <div
+              id="collapseSearch"
+              class="accordion-collapse collapse"
+              data-bs-parent="#homepageAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                  Users can search for matcha reviews by entering a
+                  <strong>suburb or postcode</strong>, making it easier to find
+                  places relevant to them.
+                </p>
+                <p><strong>🛠 How it works:</strong></p>
+                <ul>
+                  <li>
+                    The search input is placed above the review card section in
+                    <code>index.ejs</code> and has the ID
+                    <code>reviewSearch</code>.
+                  </li>
+                  <li>
+                    Each review card includes a
+                    <code>&lt;span class="suburb-postcode"&gt;</code> that
+                    stores the searchable text.
+                  </li>
+                  <li>
+                    In <code>scripts.js</code>, an input event listener detects
+                    changes in the search bar:
+                    <ul>
+                      <li>
+                        The script reads the user's input, converts it to
+                        lowercase, and compares it to the location text in each
+                        card.
+                      </li>
+                      <li>
+                        Cards that match are displayed; others are hidden by
+                        setting <code>style.display = "none"</code>.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>
+                  This feature allows for quick, client-side filtering of
+                  reviews without needing any reload or external query.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Review Form + Validation -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingReviewForm">
+              <button
+                class="accordion-button"
+                type="button"
+                style="background-color: #f0f2c4"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseReviewForm"
+              >
+                📝 Review Form + Validation
+              </button>
+            </h2>
+            <div
+              id="collapseReviewForm"
+              class="accordion-collapse collapse"
+              data-bs-parent="#homepageAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                  Users can share their matcha experience by submitting a review
+                  through this form.
+                </p>
+                <p><strong>🛠 How it works:</strong></p>
+                <ul>
+                  <li>
+                    The form structure is defined in <code>index.ejs</code> and
+                    includes text fields, a dropdown, and star rating inputs.
+                  </li>
+                  <li>
+                    Client-side validation is handled in
+                    <code>scripts.js</code>:
+                    <ul>
+                      <li>
+                        Checks for empty fields, valid email format, and
+                        10-digit mobile number.
+                      </li>
+                      <li>
+                        Displays custom error messages beside each input field.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Server-side validation is added in <code>index.js</code>:
+                    <ul>
+                      <li>
+                        Verifies that the phone number starts with “04” and is
+                        10 digits long.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    If the form is valid, the review is saved and a confirmation
+                    is shown via <code>response.ejs</code>.
+                  </li>
+                </ul>
+                <p>
+                  This two-layered validation ensures data accuracy while
+                  keeping the experience user-friendly.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Country Dropdown (JSON-powered) -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingCountryDropdown">
+              <button
+                class="accordion-button"
+                type="button"
+                style="background-color: #f0f2c4"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseCountryDropdown"
+              >
+                🌍 Country Dropdown (JSON-powered)
+              </button>
+            </h2>
+            <div
+              id="collapseCountryDropdown"
+              class="accordion-collapse collapse"
+              data-bs-parent="#homepageAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                  To simplify input, the country field in the review form is
+                  powered by a JSON file that dynamically fills the dropdown.
+                </p>
+                <p><strong>🛠 How it works:</strong></p>
+                <ul>
+                  <li>
+                    A local <code>countries.json</code> file contains an array
+                    of country names.
+                  </li>
+                  <li>
+                    On page load, a script in <code>scripts.js</code> fetches
+                    this file and parses the country names.
+                  </li>
+                  <li>
+                    It then creates and appends
+                    <code>&lt;option&gt;</code> elements into the
+                    <code>&lt;select&gt;</code> field with
+                    <code>id="country"</code> (defined in
+                    <code>index.ejs</code>).
+                  </li>
+                  <li>
+                    The list is sorted alphabetically before being rendered.
+                  </li>
+                </ul>
+                <p>
+                  This approach avoids hardcoding long country lists in HTML and
+                  makes the dropdown easy to maintain or update later.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Submission Response Summary -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingResponse">
+              <button
+                class="accordion-button"
+                type="button"
+                style="background-color: #f0f2c4"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseResponse"
+              >
+                ✅ Submission Response Summary
+              </button>
+            </h2>
+            <div
+              id="collapseResponse"
+              class="accordion-collapse collapse"
+              data-bs-parent="#homepageAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                  After submitting a review, users are redirected to a
+                  confirmation page that summarizes their input in a clear and
+                  friendly layout.
+                </p>
+                <p><strong>🛠 How it works:</strong></p>
+                <ul>
+                  <li>
+                    The review form sends data via POST to
+                    <code>/submitreview</code> (handled in
+                    <code>index.js</code>).
+                  </li>
+                  <li>
+                    In <code>index.js</code>, the server:
+                    <ul>
+                      <li>Validates the data and stores it in the database.</li>
+                      <li>
+                        Then renders the <code>response.ejs</code> page, passing
+                        the submitted values as template variables.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    The <code>response.ejs</code> template:
+                    <ul>
+                      <li>
+                        Displays each field (name, email, phone, country, venue,
+                        review, rating) in a styled summary box.
+                      </li>
+                      <li>
+                        Star ratings are rendered dynamically using a loop that
+                        displays filled star icons based on the user's rating.
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+                <p>
+                  This feature reassures the user that their submission was
+                  successful, while reinforcing the personalized and welcoming
+                  tone of the website.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Newsletter Subscription -->
+        <h3 class="mb-3">Newsletter Subscription</h3>
+        <div class="accordion mb-4" id="newsletterAccordion">
+          <!-- Newsletter Subscription Modal -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingSubscription">
+              <button
+                class="accordion-button"
+                type="button"
+                style="background-color: #f0f2c4"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseSubscription"
+              >
+                ✉️ Newsletter Subscription Modal
+              </button>
+            </h2>
+            <div
+              id="collapseSubscription"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#newsletterAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                  The subscription form is available in the footer across all
+                  public-facing pages. When a user subscribes, a success modal
+                  appears on the same page — creating a smooth, dynamic
+                  experience.
+                </p>
+                <p><strong>🛠 How it works:</strong></p>
+                <ul>
+                  <li>
+                    The form includes a hidden input that stores the user’s
+                    original URL (<code>&lt;%= req.originalUrl %&gt;</code>),
+                    ensuring the user stays on the same page after submission.
+                  </li>
+                  <li>
+                    The backend redirects the user back to that URL with
+                    <code>?subscribed=true</code> appended.
+                  </li>
+                  <li>
+                    In <code>scripts.js</code>, a script checks for this query
+                    string and uses Bootstrap’s JavaScript API to trigger the
+                    modal on page load.
+                  </li>
+                </ul>
+                <p>
+                  This approach avoids a full page reload or redirection,
+                  allowing the confirmation to feel instant and integrated — a
+                  subtle but polished UX improvement.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- About Page -->
+        <h3 class="mb-3">About Page</h3>
+        <div class="accordion mb-4" id="aboutAccordion">
+          <!-- About Page Animation -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAbout">
+              <button
+                class="accordion-button"
+                type="button"
+                style="background-color: #f0f2c4"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseAbout"
+              >
+                🎨 About Page Animation
+              </button>
+            </h2>
+            <div
+              id="collapseAbout"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#aboutAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                  To make static content feel more lively, the About page
+                  introduces subtle animations when elements load.
+                </p>
+                <p><strong>🛠 How it works:</strong></p>
+                <ul>
+                  <li>
+                    A CSS animation named <code>fadeSlideUp</code> is defined in
+                    <code>styles.css</code>, combining opacity and vertical
+                    movement.
+                  </li>
+                  <li>
+                    The <code>fade-slide-up</code> class is applied to About
+                    page elements in <code>about.ejs</code> to trigger the
+                    animation.
+                  </li>
+                  <li>
+                    Additional classes like <code>fade-delay-1</code> and
+                    <code>fade-delay-2</code> introduce staggered timing, giving
+                    the text and image elements a gentle entrance one after the
+                    other.
+                  </li>
+                </ul>
+                <p>
+                  This small enhancement creates a more polished, story-like
+                  reveal as users scroll or load the page.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recipes Page -->
+        <h3 class="mb-3">Recipes Page</h3>
+        <div class="accordion mb-4" id="recipesAccordion">
+          <!-- Recipe Category Filter -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingRecipeFilter">
+              <button
+                class="accordion-button"
+                type="button"
+                style="background-color: #f0f2c4"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseRecipeFilter"
+              >
+                🍵 Recipe Category Filter
+              </button>
+            </h2>
+            <div
+              id="collapseRecipeFilter"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#recipesAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                  Users can filter recipes by category using interactive buttons
+                  that dynamically show or hide content.
+                </p>
+                <p><strong>🛠 How it works:</strong></p>
+                <ul>
+                  <li>
+                    Each filter button has a
+                    <code>data-category</code> attribute, and each recipe group
+                    section has a corresponding <code>id</code>.
+                  </li>
+                  <li>
+                    In <code>scripts.js</code>, a click event listener is added
+                    to all <code>.recipe-filter-btn</code> elements.
+                  </li>
+                  <li>
+                    When clicked, the script:
+                    <ul>
+                      <li>
+                        Removes the <code>active</code> class from all buttons
+                        and adds it to the selected one.
+                      </li>
+                      <li>
+                        Hides all <code>.recipe-category</code> sections using
+                        <code>classList.add("d-none")</code>, then reveals the
+                        matching section by ID.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    Button styling and hover states are defined in
+                    <code>styles.css</code> for both default and active states.
+                  </li>
+                </ul>
+                <p>
+                  This interaction makes the recipe page intuitive and engaging
+                  without needing to reload or navigate to separate pages.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recipe Detail Modals -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingRecipeModals">
+              <button
+                class="accordion-button"
+                type="button"
+                style="background-color: #f0f2c4"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseRecipeModals"
+              >
+                🧾 Recipe Detail Modals
+              </button>
+            </h2>
+            <div
+              id="collapseRecipeModals"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#recipesAccordion"
+            >
+              <div class="accordion-body">
+                <p>
+                  Each recipe includes an interactive modal with full
+                  preparation steps, offering a deeper dive without navigating
+                  away from the page.
+                </p>
+                <p><strong>🛠 How it works:</strong></p>
+                <ul>
+                  <li>
+                    Recipe cards are built in <code>recipes.ejs</code>, and each
+                    image includes a <code>data-bs-toggle="modal"</code> and a
+                    <code>data-bs-target="#modalId"</code> to trigger its
+                    corresponding modal.
+                  </li>
+                  <li>
+                    The modal content is placed directly in the same file, below
+                    the recipe grid.
+                  </li>
+                  <li>
+                    Bootstrap’s modal system handles the open/close transitions
+                    and layout.
+                  </li>
+                </ul>
+                <p>
+                  This feature makes exploring recipes feel seamless, polished,
+                  and informative.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================== FOOTER ====================== -->
+    <footer class="pt-5 pb-3 text-white" style="background-color: #94a470">
+      <div class="container">
+        <div class="row text-center text-md-start">
+          <!-- Logo + Summary -->
+          <div class="col-12 col-md-5 mb-4">
+            <img
+              src="images/matchamelb-logo-white.png"
+              alt="MatchaMelb Logo"
+              height="50"
+              class="mb-3"
+            />
+            <p class="small mx-auto mx-md-0" style="max-width: 340px">
+              A curated collection of matcha reviews, recipes, and insights
+              across Melbourne – designed to guide, inspire, and connect matcha
+              lovers in the city.
+            </p>
+          </div>
+
+          <!-- Footer Column 2: Quick Links -->
+          <div class="col-12 col-md-4 mb-4">
+            <h6 class="fw-semibold mb-3">Quick Links</h6>
+            <ul class="list-unstyled small">
+              <li class="mb-1">
+                <a href="/about" class="text-white text-decoration-none"
+                  >About</a
+                >
+              </li>
+              <li class="mb-1">
+                <a href="/#reviews" class="text-white text-decoration-none"
+                  >Reviews</a
+                >
+              </li>
+              <li class="mb-1">
+                <a href="/recipes" class="text-white text-decoration-none"
+                  >Recipes</a
+                >
+              </li>
+              <li class="mb-1">
+                <a href="/#faq" class="text-white text-decoration-none">FAQ</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Icons -->
+          <div class="col-12 col-md-3 mb-4">
+            <h6 class="fw-semibold mb-3">Contact</h6>
+            <a href="#" class="text-white me-3"
+              ><i class="bi bi-instagram fs-5"></i
+            ></a>
+            <a href="#" class="text-white"
+              ><i class="bi bi-facebook fs-5"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <hr class="border-white opacity-25 mt-3" />
+
+        <p class="text-center small mb-0">
+          &copy; 2025 MatchaMelb. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- ====================== BOOTSTRAP JS ====================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

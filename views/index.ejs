@@ -1,0 +1,746 @@
+<!-- ===================================== -->
+<!--        MATCHAMELB MAIN EJS FILE       -->
+<!-- ===================================== -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MatchaMelb – Best Matcha Reviews in Melbourne</title>
+
+    <!-- Bootstrap CSS & JS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- =================== NAVIGATION BAR =================== -->
+    <!-- Includes logo, hamburger toggle, links to other pages, and search bar -->
+    <nav
+      class="navbar navbar-expand-lg sticky-top shadow-sm"
+      style="background-color: #94a470"
+    >
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <img
+            src="images/matchamelb-logo-white.png"
+            alt="MatchaMelb Logo"
+            height="36"
+            class="me-2"
+          />
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Nav Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <!-- Internal & External Nav Items -->
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="/about">About</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="/#reviews">Reviews</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="/recipes">Recipes</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="/#faq">FAQ</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="/#contact">Contact</a>
+            </li>
+            <li class="nav-item px-2">
+              <a class="nav-link text-white" href="/wiki">Wiki</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- =================== WELCOME SECTION =================== -->
+    <!-- Hero section with image and introduction text -->
+    <section class="py-4" style="background-color: #fef8e7">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Matcha-themed Image -->
+          <div class="col-md-5 text-center mb-4 mb-md-0">
+            <img
+              src="images/cute-matcha-9.png"
+              alt="Cute Matcha Welcome"
+              class="img-fluid"
+              style="max-width: 240px"
+            />
+          </div>
+
+          <!-- Hero Text -->
+          <div class="col-md-7 text-center text-md-start">
+            <h1 class="fw-bold mb-3" style="color: #b37149">
+              Welcome to MatchaMelb
+            </h1>
+            <p class="lead mb-0">
+              Craving matcha but not sure where to go? MatchaMelb is your go-to
+              guide for the best matcha spots and experiences across Melbourne.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== REVIEW SECTION =================== -->
+    <!-- Features rotating review cards from different places -->
+    <section id="reviews" class="py-4" style="background-color: #ffffff">
+      <div class="container text-center">
+        <h2 class="mb-4" style="color: #b37149">Matcha Reviews</h2>
+
+        <!-- Search Input for Reviews -->
+        <div class="mb-4 d-flex justify-content-center">
+          <input
+            type="text"
+            id="reviewSearch"
+            class="form-control"
+            placeholder="Enter suburb or postcode"
+            style="max-width: 300px"
+          />
+        </div>
+
+        <!-- Arrows & Cards Container -->
+        <div class="d-flex align-items-center justify-content-between">
+          <!-- Prev Arrow Button -->
+          <button class="arrow-btn" id="prevBtn" disabled>
+            <i class="bi bi-arrow-left-circle"></i>
+          </button>
+
+          <!-- Review Cards Wrapper -->
+          <div
+            class="row g-4 flex-grow-1 justify-content-center mx-2"
+            id="reviewCards"
+          >
+            <!-- Example Review Cards (x3 shown here) -->
+            <!-- Each card includes venue name, rating, address, comment, and user -->
+            <!-- CARD 1 -->
+            <div class="col-md-4">
+              <div class="review-card p-4 rounded h-100">
+                <h5 class="fw-bold mb-2">TORI’S</h5>
+                <p class="text-muted mb-1 small">
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                </p>
+                <p class="mb-3 small">
+                  28 Niagara Ln<br />
+                  <span class="suburb-postcode">Melbourne 3000</span>
+                </p>
+                <p class="fst-italic mb-4" style="font-size: 0.95rem">
+                  I looove Tori’s! I bring people here all the time and also
+                  come myself when I need a little break and a realllly good
+                  matcha!
+                </p>
+                <p class="fw-light text-muted small mb-0">Lina, Indonesia</p>
+              </div>
+            </div>
+
+            <!-- CARD 2 -->
+            <div class="col-md-4">
+              <div class="review-card p-4 rounded h-100">
+                <h5 class="fw-bold mb-2">BALIBOLA</h5>
+                <p class="text-muted mb-1 small">
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star text-secondary"></i>
+                </p>
+                <p class="mb-3 small">
+                  7/259 Collins St<br />
+                  <span class="suburb-postcode">Melbourne 3000</span>
+                </p>
+                <p class="fst-italic mb-4" style="font-size: 0.95rem">
+                  Obsessed with the matcha here!! 💚 It’s super smooth and cozy,
+                  perfect when I want a quiet moment or catch-up with friends.
+                  Definitely my go-to when I’m around the area!
+                </p>
+                <p class="fw-light text-muted small mb-0">Noah, New Zealand</p>
+              </div>
+            </div>
+
+            <!-- CARD 3 -->
+            <div class="col-md-4">
+              <div class="review-card p-4 rounded h-100">
+                <h5 class="fw-bold mb-2">INDUSTRY BEANS</h5>
+                <p class="text-muted mb-1 small">
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star text-secondary"></i>
+                </p>
+                <p class="mb-3 small">
+                  70-76 Westgarth St<br />
+                  <span class="suburb-postcode">Fitzroy 3065</span>
+                </p>
+                <p class="fst-italic mb-4" style="font-size: 0.95rem">
+                  Their matcha is sooo creamy and just hits right every time 🧋
+                  I always stop by when I need a little pick-me-up. Such a chill
+                  spot with good vibes too!
+                </p>
+                <p class="fw-light text-muted small mb-0">Sofia, Colombia</p>
+              </div>
+            </div>
+
+            <!-- CARD 4 -->
+            <div class="col-md-4">
+              <div class="review-card p-4 rounded h-100">
+                <h5 class="fw-bold mb-2">HIKARI</h5>
+                <p class="text-muted mb-1 small">
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                </p>
+                <p class="mb-3 small">
+                  317 Swanston St<br />
+                  <span class="suburb-postcode">Melbourne 3000</span>
+                </p>
+                <p class="fst-italic mb-4" style="font-size: 0.95rem">
+                  Top tier matcha latte. Best I’ve tried so far - not too sweet,
+                  perfect blend of milk and matcha, with no feeling of
+                  grittiness on the tongue at all
+                </p>
+                <p class="fw-light text-muted small mb-0">Ava, Singapore</p>
+              </div>
+            </div>
+
+            <!-- CARD 5 -->
+            <div class="col-md-4">
+              <div class="review-card p-4 rounded h-100">
+                <h5 class="fw-bold mb-2">HARERUYA</h5>
+                <p class="text-muted mb-1 small">
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star-fill text-warning"></i>
+                  <i class="bi bi-star text-secondary"></i>
+                  <i class="bi bi-star text-secondary"></i>
+                </p>
+                <p class="mb-3 small">
+                  15-17 Lincoln Square S<br />
+                  <span class="suburb-postcode">Carlton 3053</span>
+                </p>
+                <p class="fst-italic mb-4" style="font-size: 0.95rem">
+                  Strong Matcha, Just like its name, suitable for matcha mania.
+                </p>
+                <p class="fw-light text-muted small mb-0">Ken, Malaysia</p>
+              </div>
+            </div>
+          </div>
+          <!-- Next Arrow Button -->
+          <button class="arrow-btn" id="nextBtn">
+            <i class="bi bi-arrow-right-circle"></i>
+          </button>
+        </div>
+
+        <!-- Leave a Review Button -->
+        <div class="mt-4 text-center">
+          <a href="#contact" class="btn btn-outline-review">Leave a Review</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== MATCHA FAQ SECTION =================== -->
+    <!-- Accordion-style questions and answers about matcha -->
+    <section id="faq" class="py-4" style="background-color: #fef8e7">
+      <div class="container">
+        <h2 class="text-center mb-4" style="color: #b37149">Matcha FAQ</h2>
+
+        <div class="accordion" id="faqAccordion">
+          <!-- Accordion Item 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faqHeading1">
+              <button
+                class="accordion-button collapsed fw-bold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faqCollapse1"
+                aria-expanded="false"
+                aria-controls="faqCollapse1"
+                style="background-color: #f0f2c4; color: #333"
+              >
+                Q: What is the origin of matcha?
+              </button>
+            </h2>
+            <div
+              id="faqCollapse1"
+              class="accordion-collapse collapse"
+              aria-labelledby="faqHeading1"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Matcha traces back to ancient China but flourished in Japan
+                during the 12th century. It was first used by Zen Buddhist monks
+                to stay focused and calm during meditation, becoming a symbol of
+                mindfulness and ceremony in Japanese culture.
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faqHeading2">
+              <button
+                class="accordion-button collapsed fw-bold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faqCollapse2"
+                aria-expanded="false"
+                aria-controls="faqCollapse2"
+                style="background-color: #f0f2c4; color: #333"
+              >
+                Q: What are the types of matcha?
+              </button>
+            </h2>
+            <div
+              id="faqCollapse2"
+              class="accordion-collapse collapse"
+              aria-labelledby="faqHeading2"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                There are mainly two types:
+                <ul>
+                  <li>
+                    Ceremonial grade – the highest quality, perfect for sipping
+                    with water only
+                  </li>
+                  <li>
+                    Culinary grade – ideal for lattes, desserts, and baking
+                  </li>
+                </ul>
+                Each type has its own charm depending on how you want to enjoy
+                your matcha moment.
+              </div>
+            </div>
+          </div>
+
+          <!-- Accordion Item 3 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="faqHeading3">
+              <button
+                class="accordion-button collapsed fw-bold"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#faqCollapse3"
+                aria-expanded="false"
+                aria-controls="faqCollapse3"
+                style="background-color: #f0f2c4; color: #333"
+              >
+                Q: What are the health benefits of matcha?
+              </button>
+            </h2>
+            <div
+              id="faqCollapse3"
+              class="accordion-collapse collapse"
+              aria-labelledby="faqHeading3"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Matcha is packed with antioxidants, especially catechins like
+                EGCG, known for:
+                <ul>
+                  <li>Boosting metabolism</li>
+                  <li>Enhancing focus and calm</li>
+                  <li>Supporting heart health</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== CONTACT & REVIEW FORM SECTION =================== -->
+    <section id="contact" class="py-4" style="background-color: #ffffff">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <!-- LEFT: Contact Info -->
+          <div class="col-md-5">
+            <div class="p-4 rounded" style="background-color: #f0f2c4">
+              <h2 style="color: #b37149" class="mb-4">Contact Information</h2>
+              <p class="mb-2">
+                <i class="bi bi-envelope-fill me-2"></i><strong>Email:</strong
+                ><br />hello@matchamelb.com
+              </p>
+              <p class="mb-2">
+                <i class="bi bi-telephone-fill me-2"></i><strong>Phone:</strong
+                ><br />+61 400 123 456
+              </p>
+              <p class="mb-4">
+                <i class="bi bi-geo-alt-fill me-2"></i><strong>Address:</strong
+                ><br />MatchaMelb HQ<br />Melbourne, VIC 3000<br />Australia
+              </p>
+
+              <p class="fw-semibold mb-2">Follow Us:</p>
+              <a href="#" class="me-3 text-decoration-none text-dark"
+                ><i class="bi bi-instagram" style="font-size: 1.4rem"></i
+              ></a>
+              <a href="#" class="text-decoration-none text-dark"
+                ><i class="bi bi-facebook" style="font-size: 1.4rem"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- RIGHT: User Review Submission Form -->
+          <!-- Includes fields for name, email, origin, text review, and star rating -->
+          <div class="col-md-7">
+            <h2 style="color: #b37149">Found a Matcha Gem?</h2>
+            <p>We’d love to hear about it!</p>
+
+            <form action="/submitreview" method="POST" id="reviewForm">
+              <!-- Name -->
+              <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input
+                  type="text"
+                  class="form-control border-success-subtle"
+                  id="name"
+                  name="name"
+                  placeholder="e.g. Ha"
+                />
+                <span class="text-danger" id="name-error"></span>
+              </div>
+
+              <!-- Email -->
+              <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  class="form-control border-success-subtle"
+                  id="email"
+                  name="email"
+                  placeholder="e.g. ha@example.com"
+                />
+                <span class="text-danger" id="email-error"></span>
+              </div>
+
+              <!-- Phone -->
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input
+                  type="tel"
+                  class="form-control border-success-subtle"
+                  id="phone"
+                  name="phone"
+                  placeholder="e.g. 0400123456"
+                  maxlength="10"
+                />
+                <span class="text-danger" id="phone-error"></span>
+              </div>
+
+              <!-- Country -->
+              <div class="mb-3">
+                <label for="country" class="form-label"
+                  >Where are you from?</label
+                >
+                <select
+                  class="form-select border-success-subtle"
+                  id="country"
+                  name="country"
+                >
+                  <option value="" disabled selected>
+                    Select your country
+                  </option>
+                </select>
+                <span class="text-danger" id="country-error"></span>
+              </div>
+
+              <!-- Venue -->
+              <div class="mb-3">
+                <label for="venue" class="form-label"
+                  >What matcha spot did you visit?</label
+                >
+                <input
+                  type="text"
+                  class="form-control border-success-subtle"
+                  id="venue"
+                  name="venue"
+                  placeholder="e.g. Tori’s, Hikari, Oko ..."
+                />
+                <span class="text-danger" id="venue-error"></span>
+              </div>
+
+              <!-- Review -->
+              <div class="mb-3">
+                <label for="review" class="form-label">Your Review</label>
+                <textarea
+                  class="form-control border-success-subtle"
+                  id="review"
+                  name="review"
+                  rows="4"
+                  placeholder="Tell us what you ordered, how it tasted, and why you loved it!"
+                ></textarea>
+                <span class="text-danger" id="review-error"></span>
+              </div>
+
+              <!-- Star Rating -->
+              <div class="mb-3">
+                <label class="form-label d-block mb-2"
+                  >How would you rate it?</label
+                >
+                <div
+                  class="d-flex gap-2 flex-wrap"
+                  role="group"
+                  aria-label="Star rating"
+                >
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="rating"
+                    id="rating-1"
+                    value="1"
+                  />
+                  <label for="rating-1">⭐</label>
+
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="rating"
+                    id="rating-2"
+                    value="2"
+                  />
+                  <label for="rating-2">⭐⭐</label>
+
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="rating"
+                    id="rating-3"
+                    value="3"
+                  />
+                  <label for="rating-3">⭐⭐⭐</label>
+
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="rating"
+                    id="rating-4"
+                    value="4"
+                  />
+                  <label for="rating-4">⭐⭐⭐⭐</label>
+
+                  <input
+                    type="radio"
+                    class="form-check-input"
+                    name="rating"
+                    id="rating-5"
+                    value="5"
+                  />
+                  <label for="rating-5">⭐⭐⭐⭐⭐</label>
+                </div>
+                <span class="text-danger" id="rating-error"></span>
+              </div>
+
+              <!-- Submit -->
+              <button
+                type="submit"
+                class="btn fw-semibold text-white"
+                style="background-color: #ccdb8a"
+              >
+                Submit Review
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== FOOTER =================== -->
+    <!-- Includes logo + short text, quick links, and contact icons -->
+    <footer class="pt-5 pb-3 text-white" style="background-color: #94a470">
+      <div class="container">
+        <div class="row text-center text-md-start">
+          <!-- Column 1: Logo + Summary -->
+          <div class="col-12 col-md-4 mb-4">
+            <img
+              src="images/matchamelb-logo-white.png"
+              alt="MatchaMelb Logo"
+              height="50"
+              class="mb-3"
+            />
+            <p class="small mx-auto mx-md-0" style="max-width: 340px">
+              A curated collection of matcha reviews, recipes, and insights
+              across Melbourne – designed to guide, inspire, and connect matcha
+              lovers in the city.
+            </p>
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="col-12 col-md-2 mb-4">
+            <h6 class="fw-semibold mb-3">Quick Links</h6>
+            <ul class="list-unstyled small">
+              <li class="mb-1">
+                <a href="/about" class="text-white text-decoration-none"
+                  >About</a
+                >
+              </li>
+              <li class="mb-1">
+                <a href="/#reviews" class="text-white text-decoration-none"
+                  >Reviews</a
+                >
+              </li>
+              <li class="mb-1">
+                <a href="/recipes" class="text-white text-decoration-none"
+                  >Recipes</a
+                >
+              </li>
+              <li class="mb-1">
+                <a href="/#faq" class="text-white text-decoration-none">FAQ</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact -->
+          <div class="col-12 col-md-2 mb-4">
+            <h6 class="fw-semibold mb-3">Contact</h6>
+            <a href="#" class="text-white me-3"
+              ><i class="bi bi-instagram fs-5"></i
+            ></a>
+            <a href="#" class="text-white"
+              ><i class="bi bi-facebook fs-5"></i
+            ></a>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="col-12 col-md-4 mb-4">
+            <h6 class="fw-semibold mb-2">Our Newsletter</h6>
+            <form
+              action="/subscribe"
+              method="POST"
+              class="d-flex needs-validation"
+              novalidate
+            >
+              <input
+                type="hidden"
+                name="redirectTo"
+                value="<%= req.originalUrl %>"
+              />
+              <input
+                type="email"
+                name="email"
+                class="form-control form-control-sm"
+                placeholder="Enter your email"
+                required
+                style="border: none; border-radius: 0.25rem 0 0 0.25rem"
+              />
+              <button
+                type="submit"
+                class="btn btn-sm text-dark fw-semibold"
+                style="
+                  background-color: #fef8c3;
+                  border-radius: 0 0.25rem 0.25rem 0;
+                "
+              >
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <hr class="border-white opacity-25 mt-3" />
+        <p class="text-center small mb-0">
+          &copy; 2025 MatchaMelb. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Subscription Success Modal -->
+    <div
+      class="modal fade"
+      id="subscribeSuccessModal"
+      tabindex="-1"
+      aria-labelledby="subscribeModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div
+          class="modal-content p-4"
+          style="
+            border-radius: 1rem;
+            background-color: #fffef7;
+            border: 2px solid #fce873;
+          "
+        >
+          <div class="text-center">
+            <img
+              src="/images/subscribed-1.png"
+              alt="Subscribed"
+              style="max-width: 140px"
+              class="mb-3"
+            />
+            <h6 class="fw-semibold mb-2">
+              Thanks for joining the MatchaMelb community! 🧋
+            </h6>
+            <p class="mb-0">Your inbox just got greener.</p>
+            <button
+              type="button"
+              class="btn btn-sm mt-3"
+              data-bs-dismiss="modal"
+              style="background-color: #ccdb8a"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- =================== JAVASCRIPT =================== -->
+    <!-- Bootstrap Validation Script for Form Submission -->
+    <script>
+      (() => {
+        "use strict";
+        const forms = document.querySelectorAll(".needs-validation");
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

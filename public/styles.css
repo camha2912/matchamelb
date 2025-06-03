@@ -1,0 +1,150 @@
+/* ====================== NAVBAR STYLES ====================== */
+
+/* Adds underline on hover to make nav links feel interactive */
+.navbar .nav-link:hover {
+  text-decoration: underline;
+}
+
+/* Highlights the active nav link to indicate current page */
+.nav-link.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* ====================== ANIMATION FOR ABOUT SECTION ====================== */
+
+/* Fade and slide-up animation for section elements */
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Class to trigger fadeSlideUp with smooth timing */
+.fade-slide-up {
+  opacity: 0;
+  animation: fadeSlideUp 0.8s ease-out forwards;
+}
+
+/* Optional staggered delay */
+.fade-delay-1 {
+  animation-delay: 0.2s;
+}
+.fade-delay-2 {
+  animation-delay: 0.4s;
+}
+
+
+/* ====================== REVIEW CARD STYLES ====================== */
+
+/* Sets background color and smooth hover transition for review cards */
+.review-card {
+  background-color: #f0f2c4;
+  transition: transform 0.2s ease;
+}
+
+/* Adds a slight upward shift on hover to make cards feel dynamic */
+.review-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Adjusts the heading size and spacing for review titles */
+.review-card h5 {
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
+}
+
+/* Increases line height for better readability of review text */
+.review-card p {
+  line-height: 1.5;
+}
+
+
+/* ====================== ARROW BUTTON STYLES ====================== */
+
+/* Basic style for next/previous arrow buttons in reviews section */
+.arrow-btn {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #96a678;
+  transition: color 0.2s ease;
+}
+
+/* Changes arrow color on hover to indicate it's clickable */
+.arrow-btn:hover:not(:disabled) {
+  color: #ccdb8a;
+}
+
+/* Makes disabled arrow look faded and inactive */
+.arrow-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+
+/* ====================== CUSTOM BUTTON STYLES ====================== */
+
+/* Outline-style button with custom color and hover effects */
+.btn-outline-review {
+  color: #ccdb8a;
+  border: 2px solid #ccdb8a;
+  padding: 0.6rem 1.5rem;
+  font-weight: 600;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Fills background on hover for better interactivity */
+.btn-outline-review:hover {
+  background-color: #ccdb8a;
+  color: #fff;
+  text-decoration: none;
+}
+
+
+/* ====================== GLOBAL STYLES ====================== */
+
+/* Enables smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* ====================== RECIPE FILTER BUTTONS ====================== */
+
+/* Base styling for filter buttons in the Recipes section */
+.recipe-filter-btn {
+  background-color: #ffffff;
+  color: #84915c;
+  border: 1.5px solid #ccdb8a;
+  border-radius: 10px;
+  padding: 0.5rem 1.25rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* Changes background and text color on hover for better feedback */
+.recipe-filter-btn:hover {
+  background-color: #ccdb8a;
+  color: white;
+}
+
+/* Styling for the active (currently selected) filter */
+.recipe-filter-btn.active {
+  background-color: #ccdb8a;
+  color: white;
+  border: 1.5px solid #ccdb8a;
+  font-weight: 600;
+}
